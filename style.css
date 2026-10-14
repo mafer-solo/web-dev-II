@@ -1,0 +1,372 @@
+/* Including padding and borders in elemnts sizes */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f2f0ed;
+    color: #293e50;
+}
+
+/* Compact pastel blue header */
+header {
+    padding: 30px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #bfd9ed, #d5e5f1);
+    color: #243e53;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.2;
+}
+
+header p {
+    margin: 4px 0;
+    font-size: 1rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px 20px;
+    background-color: #e5eef5;
+    border-bottom: 1px solid #c8d8e4;
+}
+
+nav a {
+    color: #293e50;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background-color: #cbdfee;
+}
+
+nav a:focus-visible {
+    outline: 3px solid #426b89;
+    outline-offset: 3px;
+}
+
+/* Main content */
+main {
+    width: min(100% - 40px, 1000px);
+    margin: 32px auto;
+}
+
+section {
+    margin-bottom: 28px;
+    padding: 32px;
+    border: 1px solid #d3dce3;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(41, 62, 80, 0.07);
+}
+
+/* Soft blue and warm off-white sections */
+#about,
+#goals {
+    background-color: #e3eff7;
+}
+
+#skills,
+#experiences {
+    background-color: #faf8f5;
+}
+
+h2 {
+    margin-top: 0;
+    color: #294b64;
+    font-size: 1.6rem;
+}
+
+section h3 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: #294b64;
+    font-size: 1.15rem;
+}
+
+/* Skill cards */
+#skills ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    padding: 0;
+    list-style: none;
+}
+
+#skills li {
+    padding: 22px;
+    background-color: #deedf7;
+    border-top: 4px solid #8bafc9;
+    border-radius: 12px;
+}
+
+#skills li h3 {
+    margin-top: 0;
+}
+
+#skills li p {
+    margin-bottom: 0;
+}
+
+/* Experience cards */
+#experiences article {
+    margin-top: 24px;
+    padding: 24px;
+    background-color: #e3eff7;
+    border-left: 4px solid #8bafc9;
+    border-radius: 12px;
+}
+
+#experiences article h3 {
+    margin-top: 0;
+}
+
+/* Goal headings */
+#goals h3 {
+    padding: 10px 14px;
+    background-color: #faf8f5;
+    border-left: 4px solid #8bafc9;
+    border-radius: 6px;
+}
+
+/* Photos */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 18px;
+    margin-top: 24px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: 220px;
+    object-fit: contain;
+    margin: 16px auto;
+    border-radius: 12px;
+}
+
+.photo-gallery img {
+    margin: 0;
+    justify-self: center;
+    background-color: #e3eff7;
+    border: 1px solid #c8d8e4;
+}
+
+.photo-gallery img:only-child {
+    grid-column: 1 / -1;
+}
+
+/* Videos */
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.experience-video {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    max-height: 500px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background-color: #182530;
+}
+
+#experiences figure {
+    min-width: 0;
+    margin: 0;
+}
+
+#experiences figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #294b64;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #bfd9ed;
+    color: #243e53;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Phone layout */
+@media (max-width: 650px) {
+    header {
+        padding: 24px 16px;
+    }
+
+    nav {
+        gap: 6px;
+        padding: 10px;
+    }
+
+    main {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+    }
+
+    section {
+        padding: 22px;
+    }
+
+    #experiences article {
+        padding: 18px;
+    }
+
+    #skills ul,
+    .photo-gallery,
+    .video-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Theme button */
+#theme-toggle {
+    margin-top: 16px;
+    padding: 10px 18px;
+    font: inherit;
+    font-weight: bold;
+    color: #243e53;
+    background-color: #faf8f5;
+    border: 1px solid #426b89;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: #deedf7;
+}
+
+#theme-toggle:focus-visible {
+    outline: 3px solid #426b89;
+    outline-offset: 3px;
+}
+
+/* Dark theme */
+body.dark-mode {
+    background-color: #17232e;
+    color: #edf3f8;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #263e52, #334f65);
+    color: #edf3f8;
+}
+
+body.dark-mode nav,
+body.dark-mode footer {
+    background-color: #263e52;
+    color: #edf3f8;
+    border-color: #7896ad;
+}
+
+body.dark-mode #about,
+body.dark-mode #skills,
+body.dark-mode #experiences,
+body.dark-mode #goals {
+    background-color: #223443;
+    color: #edf3f8;
+    border-color: #7896ad;
+}
+
+body.dark-mode #skills li,
+body.dark-mode #experiences article,
+body.dark-mode #goals h3 {
+    background-color: #30495d;
+    border-color: #98bfdc;
+}
+
+body.dark-mode h2,
+body.dark-mode section h3,
+body.dark-mode nav a,
+body.dark-mode #experiences figcaption {
+    color: #edf3f8;
+}
+
+body.dark-mode nav a:hover {
+    background-color: #30495d;
+}
+
+body.dark-mode .photo-gallery img {
+    background-color: #30495d;
+    border-color: #7896ad;
+}
+
+body.dark-mode nav a:focus-visible {
+    outline-color: #98bfdc;
+}
+
+/* Show one photo at a time when JavaScript enables the slider */
+.photo-gallery.slider-active {
+    grid-template-columns: 1fr;
+}
+
+.photo-gallery img[hidden] {
+    display: none;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.gallery-controls button {
+    padding: 10px 16px;
+    font: inherit;
+    font-weight: bold;
+    background-color: #deedf7;
+    color: #243e53;
+    border: 1px solid #426b89;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.gallery-controls button:hover {
+    background-color: #bfd9ed;
+}
+
+.gallery-controls button:focus-visible {
+    outline: 3px solid #426b89;
+    outline-offset: 3px;
+}
+
+.gallery-controls span {
+    font-weight: bold;
+}
+
+body.dark-mode .gallery-controls button:focus-visible {
+    outline-color: #98bfdc;
+}
+
+ 
